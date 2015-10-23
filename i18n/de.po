@@ -23,7 +23,7 @@ msgstr ""
 "kann sich dein Knoten mit dem Paderborner Mesh-VPN zu verbinden. Bitte "
 "schicke dazu diesen Schlüssel und den Namen deines Knotens "
 "an maschinenraum@paderborn.freifunk.net oder benutze am besten gleich das "
-"<a href=\"http://paderborn.freifunk.net/?page_id=366&key=<%=pubkey%>&nname=<%=hostname%>&mac=<%=sysconfig.primary_mac%>\"> "
+"<a href=\"http://paderborn.freifunk.net/?page_id=366&key=<%=pubkey%>&nname=<%=hostname%>&mac=<%=sysconfig.primary_mac%>&email=<%=contact%>\"> "
 "vorausgefüllte Formular auf unserer Webseite</a>.<br><br>"
 
 msgid "gluon-config-mode:reboot"

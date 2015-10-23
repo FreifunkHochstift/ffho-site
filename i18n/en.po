@@ -21,7 +21,7 @@ msgstr ""
 "connect to the mesh VPN until the key has been registered on the Freifunk "
 "Paderborn servers. "
 "To register the key fill out "
-"<a href=\"http://paderborn.freifunk.net/?page_id=366&key=<%=pubkey%>&nname=<%=hostname%>&mac=<%=sysconfig.primary_mac%>\">this form</a> "
+"<a href=\"http://paderborn.freifunk.net/?page_id=366&key=<%=pubkey%>&nname=<%=hostname%>&mac=<%=sysconfig.primary_mac%>&email=<%=contact%>\">this form</a> "
 "or send it together with your node's name (<em><%=hostname%></em>) to "
 "<a href=\"mailto:maschinenraum@paderborn.freifunk.net\">maschinenraum@paderborn.freifunk.net</a>."
 
