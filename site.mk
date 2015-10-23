@@ -2,7 +2,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	ffpb-banner \
 	ffpb-debug \
-    ffpb-node-tuning \
+	ffpb-node-tuning \
 	ffpb-ebtables-net-rules \
 	ffpb-openwrt-migration-tools \
 	gluon-alfred \
@@ -11,8 +11,8 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
-	gluon-config-mode-geo-location \
+	ffpb-config-mode-mesh-vpn \
+	ffpb-config-mode-geo-location \
 	gluon-config-mode-contact-info \
 	gluon-config-mode-site-select \
 	gluon-ebtables-filter-multicast \
