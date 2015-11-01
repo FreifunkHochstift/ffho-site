@@ -23,7 +23,7 @@ msgstr ""
 "To register the key fill out "
 "<a href=\"http://hochstift.freifunk.net/?page_id=366&key=<%=pubkey%>&nname=<%=hostname%>&mac=<%=sysconfig.primary_mac%>&email=<%=contact%>\">this form</a> "
 "or send it together with your node's name (<em><%=hostname%></em>) to "
-"<a href=\"mailto:maschinenraum@hochstift.freifunk.net\">maschinenraum@hochstift.freifunk.net</a>."
+"<a href=\"mailto:kontakt@hochstift.freifunk.net\">kontakt@hochstift.freifunk.net</a>."
 
 
 msgid "gluon-config-mode:reboot"
