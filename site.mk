@@ -5,16 +5,17 @@ GLUON_SITE_PACKAGES := \
 	ffpb-node-tuning \
 	ffpb-ebtables-net-rules \
 	ffpb-openwrt-migration-tools \
+	ffpb-alfred-config \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-hostname \
-	ffpb-config-mode-mesh-vpn \
-	ffpb-config-mode-geo-location \
 	gluon-config-mode-contact-info \
-	gluon-config-mode-site-select \
+	ffho-config-mode-mesh-vpn \
+	ffho-config-mode-geo-location \
+	ffho-config-mode-site-select \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-luci-admin \
