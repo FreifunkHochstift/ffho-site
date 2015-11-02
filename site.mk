@@ -1,6 +1,6 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
-	ffpb-banner \
+	ffho-banner \
 	ffpb-debug \
 	ffpb-node-tuning \
 	ffpb-ebtables-net-rules \
