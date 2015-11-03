@@ -1,11 +1,11 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	ffho-banner \
-	ffpb-debug \
-	ffpb-node-tuning \
-	ffpb-ebtables-net-rules \
-	ffpb-openwrt-migration-tools \
-	ffpb-alfred-config \
+	ffho-debug \
+	ffho-node-tuning \
+	ffho-ebtables-net-rules \
+	ffho-openwrt-migration-tools \
+	ffho-alfred-config \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \

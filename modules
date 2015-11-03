@@ -1,5 +1,5 @@
 GLUON_SITE_FEEDS='ffho'
 
-PACKAGES_FFHO_REPO=http://git.c3pb.de/freifunk-pb/ffpb-packages.git
+PACKAGES_FFHO_REPO=http://git.c3pb.de/freifunk-pb/ffho-packages.git
 PACKAGES_FFHO_BRANCH=v2015.1.x
 PACKAGES_FFHO_COMMIT=50de06d4e36bf895f7a2d888455982d5c88bc681
