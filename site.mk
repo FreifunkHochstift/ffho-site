@@ -1,18 +1,21 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
-	ffpb-banner \
-	ffpb-debug \
-    ffpb-node-tuning \
-	ffpb-ebtables-net-rules \
-	ffpb-openwrt-migration-tools \
+	ffho-banner \
+	ffho-debug \
+	ffho-node-tuning \
+	ffho-ebtables-net-rules \
+	ffho-openwrt-migration-tools \
+	ffho-alfred-config \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
-	gluon-config-mode-geo-location \
+	gluon-config-mode-contact-info \
+	ffho-config-mode-mesh-vpn \
+	ffho-config-mode-geo-location \
+	ffho-config-mode-site-select \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-luci-admin \
