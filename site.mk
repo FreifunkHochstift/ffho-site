@@ -4,7 +4,6 @@ GLUON_SITE_PACKAGES := \
 	ffho-debug \
 	ffho-node-tuning \
 	ffho-ebtables-net-rules \
-	ffho-openwrt-migration-tools \
 	ffho-alfred-config \
 	ffho-autoupdater-wifi-fallback \
 	gluon-alfred \
