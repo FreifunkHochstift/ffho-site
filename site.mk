@@ -6,6 +6,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-ebtables-net-rules \
 	ffho-alfred-config \
 	ffho-autoupdater-wifi-fallback \
+	ffho-txpower-fix \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \
