@@ -7,6 +7,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-alfred-config \
 	ffho-txpower-fix \
 	ffho-openwrt-migration-tools \
+	ffho-upgrade-tools \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \
