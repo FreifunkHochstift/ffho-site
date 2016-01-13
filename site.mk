@@ -8,9 +8,11 @@ GLUON_SITE_PACKAGES := \
 	ffho-txpower-fix \
 	ffho-openwrt-migration-tools \
 	ffho-upgrade-tools \
+	ffho-site-auto-select \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \
+	ffho-autoupdater-wifi-fallback \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-hostname \
