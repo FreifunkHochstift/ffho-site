@@ -71,7 +71,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_abn"
+        "site_code": "ffho_abn"
       }
     },
     {
@@ -172,7 +172,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_bdr"
+        "site_code": "ffho_bdr"
       }
     },
     {
@@ -261,7 +261,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_bev"
+        "site_code": "ffho_bev"
       }
     },
     {
@@ -350,7 +350,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_bkk"
+        "site_code": "ffho_bkk"
       }
     },
     {
@@ -427,7 +427,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_buq"
+        "site_code": "ffho_buq"
       }
     },
     {
@@ -500,7 +500,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_bxg"
+        "site_code": "ffho_bxg"
       }
     },
     {
@@ -657,7 +657,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_dek"
+        "site_code": "ffho_dek"
       }
     },
     {
@@ -734,7 +734,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_gee"
+        "site_code": "ffho_gee"
       }
     },
     {
@@ -819,7 +819,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_hox"
+        "site_code": "ffho_hox"
       }
     },
     {
@@ -924,7 +924,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_hvf"
+        "site_code": "ffho_hvf"
       }
     },
     {
@@ -1053,7 +1053,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_lip"
+        "site_code": "ffho_lip"
       }
     },
     {
@@ -1118,7 +1118,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_lit"
+        "site_code": "ffho_lit"
       }
     },
     {
@@ -1179,7 +1179,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_mms"
+        "site_code": "ffho_mms"
       }
     },
     {
@@ -1264,7 +1264,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_msg"
+        "site_code": "ffho_msg"
       }
     },
     {
@@ -1333,7 +1333,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_pad_cty"
+        "site_code": "ffho_pad_cty"
       }
     },
     {
@@ -1490,7 +1490,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_pad_uml"
+        "site_code": "ffho_pad_uml"
       }
     },
     {
@@ -1559,7 +1559,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_rhc"
+        "site_code": "ffho_rhc"
       }
     },
     {
@@ -1616,7 +1616,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_rwb"
+        "site_code": "ffho_rwb"
       }
     },
     {
@@ -1713,7 +1713,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_stm"
+        "site_code": "ffho_stm"
       }
     },
     {
@@ -1862,7 +1862,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_szn"
+        "site_code": "ffho_szn"
       }
     },
     {
@@ -1967,7 +1967,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_wag"
+        "site_code": "ffho_wag"
       }
     },
     {
@@ -2036,7 +2036,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_wux"
+        "site_code": "ffho_wux"
       }
     },
     {
@@ -2089,7 +2089,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_xsc"
+        "site_code": "ffho_xsc"
       }
     },
     {
@@ -2182,7 +2182,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_yni"
+        "site_code": "ffho_yni"
       }
     },
     {
@@ -2271,7 +2271,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_yss"
+        "site_code": "ffho_yss"
       }
     },
     {
@@ -2352,7 +2352,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_ywl"
+        "site_code": "ffho_ywl"
       }
     },
     {
@@ -2453,7 +2453,7 @@
         ]
       },
       "properties": {
-        "name": "ffho_zwg"
+        "site_code": "ffho_zwg"
       }
     }
   ]
