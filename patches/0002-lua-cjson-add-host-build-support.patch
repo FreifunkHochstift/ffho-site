@@ -1,0 +1,79 @@
+From a0a9446ad55d2dbc4ed148930e1f39ed8e4b13f4 Mon Sep 17 00:00:00 2001
+From: Matthias Schiffer <mschiffer@universe-factory.net>
+Date: Wed, 30 Dec 2015 01:02:59 +0100
+Subject: [PATCH] lua-cjson: add host build support
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Signed-off-by: Karsten Böddeker <freifunk@kb-light.de>
+---
+ ...ix-installation-of-headers-for-host-build.patch | 16 +++++++++++
+ .../0004-lua-cjson-add-host-build-support.patch    | 32 ++++++++++++++++++++++
+ 2 files changed, 48 insertions(+)
+ create mode 100644 patches/openwrt/1001-lua-fix-installation-of-headers-for-host-build.patch
+ create mode 100644 patches/packages/openwrt/1000-lua-cjson-add-host-build-support.patch
+
+diff --git a/patches/openwrt/1001-lua-fix-installation-of-headers-for-host-build.patch b/patches/openwrt/1001-lua-fix-installation-of-headers-for-host-build.patch
+new file mode 100644
+index 0000000..ab49ad6
+--- /dev/null
++++ b/patches/openwrt/1001-lua-fix-installation-of-headers-for-host-build.patch
+@@ -0,0 +1,16 @@
++From: Matthias Schiffer <mschiffer@universe-factory.net>
++Date: Tue, 29 Dec 2015 22:48:52 +0100
++Subject: lua: fix installation of headers for host build
++
++diff --git a/package/utils/lua/Makefile b/package/utils/lua/Makefile
++index 72d5631..c37d99b 100644
++--- a/package/utils/lua/Makefile
+++++ b/package/utils/lua/Makefile
++@@ -140,6 +140,7 @@ define Host/Install
++ 	$(MAKE) -C $(HOST_BUILD_DIR) \
++ 		INSTALL_TOP="$(STAGING_DIR_HOST)" \
++ 		install
+++	$(CP) $(HOST_BUILD_DIR)/src/lnum_config.h $(STAGING_DIR_HOST)/include/
++ endef
++ 
++ define Build/InstallDev
+diff --git a/patches/packages/openwrt/1000-lua-cjson-add-host-build-support.patch b/patches/packages/openwrt/10001-lua-cjson-add-host-build-support.patch
+new file mode 100644
+index 0000000..9c1f774
+--- /dev/null
++++ b/patches/packages/openwrt/1000-lua-cjson-add-host-build-support.patch
+@@ -0,0 +1,32 @@
++From: Matthias Schiffer <mschiffer@universe-factory.net>
++Date: Wed, 30 Dec 2015 01:00:49 +0100
++Subject: lua-cjson: add host build support
++
++diff --git a/lang/lua-cjson/Makefile b/lang/lua-cjson/Makefile
++index fd489f2..90c8f98 100644
++--- a/lang/lua-cjson/Makefile
+++++ b/lang/lua-cjson/Makefile
++@@ -20,6 +20,7 @@ PKG_MD5SUM:=24f270663e9f6ca8ba2a02cef19f7963
++ 
++ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
++ 
+++include $(INCLUDE_DIR)/host-build.mk
++ include $(INCLUDE_DIR)/package.mk
++ include $(INCLUDE_DIR)/cmake.mk
++ 
++@@ -39,6 +40,9 @@ endef
++ CMAKE_OPTIONS += \
++ 	-DUSE_LUA=ON
++ 
+++CMAKE_HOST_OPTIONS += \
+++	-DLUA_MATH_LIBRARY=m
+++
++ define Package/lua-cjson/install
++ 	$(INSTALL_DIR) $(1)/usr/lib/lua
++ 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cjson.so $(1)/usr/lib/lua/
++@@ -47,4 +51,5 @@ define Package/lua-cjson/install
++ 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/lua/cjson/util.lua $(1)/usr/lib/lua/cjson
++ endef
++ 
+++$(eval $(call HostBuild))
++ $(eval $(call BuildPackage,lua-cjson))
+-- 
+2.1.4
+
