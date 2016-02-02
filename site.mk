@@ -10,7 +10,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-upgrade-tools \
 	ffho-site-auto-select \
 	gluon-alfred \
-	gluon-announced \
+	gluon-respondd \
 	gluon-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	gluon-config-mode-core \
