@@ -6,6 +6,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-ebtables-net-rules \
 	ffho-openwrt-migration-tools \
 	ffho-alfred-config \
+	ffho-site-auto-select \
 	gluon-alfred \
 	gluon-announced \
 	gluon-autoupdater \
@@ -26,7 +27,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-setup-mode \
-	gluon-status-page \
+	ffho-status-page \
 	iwinfo \
 	iptables \
 	haveged
