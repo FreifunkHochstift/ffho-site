@@ -6,7 +6,6 @@ GLUON_SITE_PACKAGES := \
 	ffho-ebtables-net-rules \
 	ffho-alfred-config \
 	ffho-txpower-fix \
-	ffho-openwrt-migration-tools \
 	ffho-upgrade-tools \
 	ffho-site-auto-select \
 	gluon-alfred \
