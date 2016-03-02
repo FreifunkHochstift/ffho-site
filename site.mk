@@ -9,7 +9,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-site-auto-select \
 	gluon-alfred \
 	gluon-respondd \
-	gluon-autoupdater \
+	ffho-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
