@@ -35,7 +35,7 @@ GLUON_SITE_PACKAGES := \
 
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 0.7.0~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.7.1~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
