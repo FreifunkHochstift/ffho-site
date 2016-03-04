@@ -4,12 +4,13 @@ GLUON_SITE_PACKAGES := \
 	ffho-debug \
 	ffho-node-tuning \
 	ffho-ebtables-net-rules \
-	ffho-openwrt-migration-tools \
 	ffho-alfred-config \
+	ffho-txpower-fix \
 	ffho-site-auto-select \
 	gluon-alfred \
-	gluon-announced \
-	gluon-autoupdater \
+	gluon-respondd \
+	ffho-autoupdater \
+	ffho-autoupdater-wifi-fallback \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-hostname \
@@ -34,7 +35,7 @@ GLUON_SITE_PACKAGES := \
 
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 0.6.5~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.7.1~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
