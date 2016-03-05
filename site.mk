@@ -4,11 +4,11 @@ GLUON_SITE_PACKAGES := \
 	ffho-debug \
 	ffho-node-tuning \
 	ffho-ebtables-net-rules \
-	ffho-alfred-config \
 	ffho-txpower-fix \
 	ffho-site-auto-select \
 	gluon-alfred \
 	gluon-respondd \
+	ffho-respondd-config \
 	ffho-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	gluon-config-mode-core \
