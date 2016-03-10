@@ -35,15 +35,15 @@ GLUON_SITE_PACKAGES := \
 
 USB_BASIC := \
 	kmod-usb-core \
-        kmod-usb2 \
-        kmod-usb-hid
+	kmod-usb2 \
+	kmod-usb-hid
 
 USB_NIC := \
 	kmod-usb-net \
-        kmod-usb-net-asix \
-        kmod-usb-net-rtl8150 \
-        kmod-usb-net-rtl8152 \
-        kmod-usb-net-dm9601-ether
+	kmod-usb-net-asix \
+	kmod-usb-net-rtl8150 \
+	kmod-usb-net-rtl8152 \
+	kmod-usb-net-dm9601-ether
 
 ifeq ($(GLUON_TARGET),x86-generic)
 	GLUON_SITE_PACKAGES += \
@@ -54,7 +54,7 @@ endif
 ifeq ($(GLUON_TARGET),x86-64)
 	GLUON_SITE_PACKAGES += \
 		$(USB_BASIC) \
-	        $(USB_NIC) \
+		$(USB_NIC) \
 		kmod-igb #APU2
 endif
 
