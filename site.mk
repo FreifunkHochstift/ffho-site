@@ -4,11 +4,13 @@ GLUON_SITE_PACKAGES := \
 	ffho-debug \
 	ffho-node-tuning \
 	ffho-ebtables-net-rules \
-	ffho-openwrt-migration-tools \
-	ffho-alfred-config \
+	ffho-txpower-fix \
+	ffho-site-auto-select \
 	gluon-alfred \
-	gluon-announced \
-	gluon-autoupdater \
+	gluon-respondd \
+	ffho-respondd-config \
+	ffho-autoupdater \
+	ffho-autoupdater-wifi-fallback \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-hostname \
@@ -26,14 +28,38 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-setup-mode \
-	gluon-status-page \
+	ffho-status-page \
 	iwinfo \
 	iptables \
 	haveged
 
+USB_BASIC := \
+	kmod-usb-core \
+	kmod-usb2 \
+	kmod-usb-hid
+
+USB_NIC := \
+	kmod-usb-net \
+	kmod-usb-net-asix \
+	kmod-usb-net-rtl8150 \
+	kmod-usb-net-rtl8152 \
+	kmod-usb-net-dm9601-ether
+
+ifeq ($(GLUON_TARGET),x86-generic)
+	GLUON_SITE_PACKAGES += \
+		$(USB_BASIC) \
+		$(USB_NIC)
+endif
+
+ifeq ($(GLUON_TARGET),x86-64)
+	GLUON_SITE_PACKAGES += \
+		$(USB_BASIC) \
+		$(USB_NIC) \
+		kmod-igb #APU2
+endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 0.6.5~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.7.1~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
