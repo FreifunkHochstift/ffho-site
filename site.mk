@@ -33,6 +33,30 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	haveged
 
+USB_BASIC := \
+	kmod-usb-core \
+	kmod-usb2 \
+	kmod-usb-hid
+
+USB_NIC := \
+	kmod-usb-net \
+	kmod-usb-net-asix \
+	kmod-usb-net-rtl8150 \
+	kmod-usb-net-rtl8152 \
+	kmod-usb-net-dm9601-ether
+
+ifeq ($(GLUON_TARGET),x86-generic)
+	GLUON_SITE_PACKAGES += \
+		$(USB_BASIC) \
+		$(USB_NIC)
+endif
+
+ifeq ($(GLUON_TARGET),x86-64)
+	GLUON_SITE_PACKAGES += \
+		$(USB_BASIC) \
+		$(USB_NIC) \
+		kmod-igb #APU2
+endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
 DEFAULT_GLUON_RELEASE := 0.7.1~exp$(shell date '+%Y%m%d')
