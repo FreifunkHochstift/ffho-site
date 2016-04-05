@@ -1,0 +1,121 @@
+From: Karsten Böddeker <freifunk@kb-light.de>
+Date: Mon, 4 Apr 2016 17:02:55 +0200
+Subject: [PATCH] fix UBNT model detection
+
+---
+ .../openwrt/1000-fix-UBNT-XM-model-detection.patch | 74 ++++++++++++++++++++++
+ targets/ar71xx-generic/profiles.mk                 | 15 +++--
+ 2 files changed, 85 insertions(+), 4 deletions(-)
+ create mode 100644 patches/openwrt/1000-fix-UBNT-XM-model-detection.patch
+
+diff --git a/patches/openwrt/1000-fix-UBNT-XM-model-detection.patch b/patches/openwrt/1000-fix-UBNT-XM-model-detection.patch
+new file mode 100644
+index 0000000..79180b4
+--- /dev/null
++++ b/patches/openwrt/1000-fix-UBNT-XM-model-detection.patch
+@@ -0,0 +1,74 @@
++From: Neal Oakey <neal.oakey@bingo-ev.de>
++Date: Sun, 14 Feb 2016 20:58:20 +0100
++Subject: fix UBNT XM model detection
++
++Signed-off-by: Neal Oakey <neal.oakey@bingo-ev.de>
++
++diff --git a/target/linux/ar71xx/base-files/lib/ar71xx.sh b/target/linux/ar71xx/base-files/lib/ar71xx.sh
++index 5768286..7f50d8a 100755
++--- a/target/linux/ar71xx/base-files/lib/ar71xx.sh
+++++ b/target/linux/ar71xx/base-files/lib/ar71xx.sh
++@@ -64,6 +64,40 @@ wndr3700_board_detect() {
++ 	AR71XX_MODEL="$machine"
++ }
++ 
+++ubnt_get_mtd_part_magic() {
+++	ar71xx_get_mtd_offset_size_format EEPROM 4118 2 %02x
+++}
+++
+++ubnt_xm_board_detect() {
+++	local model
+++	local magic
+++
+++	magic="$(ubnt_get_mtd_part_magic)"
+++	case ${magic:0:3} in
+++		"e00"|\
+++		"e01"|\
+++		"e80") # It seams that there are different Versions of the Nanostation
+++			model="Ubiquiti NanoStation M"
+++			;;
+++		"e0a")
+++			model="Ubiquiti NanoStation loco M"
+++			;;
+++		"e1b") # Note: the M5 has not been tested!
+++		       #       and the Ti Versions are still missing
+++			model="Ubiquiti Rocket M"
+++			;;
+++		"e20"|\
+++		"e2d") # Bullet Ti M
+++			model="Ubiquiti Bullet M"
+++			;;
+++		"e30")
+++			model="Ubiquiti PicoStation M"
+++			;;
+++	esac
+++
+++	[ ! -z "$model" ] && AR71XX_MODEL="${model}${magic:3:1}"
+++}
+++
++ cybertan_get_hw_magic() {
++ 	local part
++ 
++@@ -475,12 +509,14 @@ ar71xx_board_detect() {
++ 		;;
++ 	*"Bullet M")
++ 		name="bullet-m"
+++		ubnt_xm_board_detect
++ 		;;
++ 	*"Loco M XW")
++ 		name="loco-m-xw"
++ 		;;
++ 	*"Nanostation M")
++ 		name="nanostation-m"
+++		ubnt_xm_board_detect
++ 		;;
++ 	*"Nanostation M XW")
++ 		name="nanostation-m-xw"
++@@ -667,6 +703,7 @@ ar71xx_board_detect() {
++ 		;;
++ 	*"Rocket M")
++ 		name="rocket-m"
+++		ubnt_xm_board_detect
++ 		;;
++ 	*"Rocket M XW")
++ 		name="rocket-m-xw"
+diff --git a/targets/ar71xx-generic/profiles.mk b/targets/ar71xx-generic/profiles.mk
+index c0b82ec..4826dba 100644
+--- a/targets/ar71xx-generic/profiles.mk
++++ b/targets/ar71xx-generic/profiles.mk
+@@ -161,12 +161,19 @@ $(eval $(call GluonModel,UBNT,ubnt-air-gateway,ubiquiti-airgateway))
+ $(eval $(call GluonModel,UBNT,ubnt-airrouter,ubiquiti-airrouter))
+ 
+ $(eval $(call GluonModel,UBNT,ubnt-bullet-m,ubiquiti-bullet-m))
+-$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-loco-m))
+-$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-picostation-m))
+-$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-rocket-m))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-nanostation-loco-m2))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-nanostation-loco-m5))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-rocket-m2))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-rocket-m5))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-bullet-m2))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-bullet-m5))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-bullet-m,ubiquiti-picostation-m2))
+ 
+-$(eval $(call GluonModel,UBNT,ubnt-loco-m-xw,ubiquiti-loco-m-xw))
+ $(eval $(call GluonModel,UBNT,ubnt-nano-m,ubiquiti-nanostation-m))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-nanostation-m,ubiquiti-nanostation-m2))
++$(eval $(call GluonModelAlias,UBNT,ubiquiti-nanostation-m,ubiquiti-nanostation-m5))
++
++$(eval $(call GluonModel,UBNT,ubnt-loco-m-xw,ubiquiti-loco-m-xw))
+ $(eval $(call GluonModel,UBNT,ubnt-nano-m-xw,ubiquiti-nanostation-m-xw))
+ $(eval $(call GluonModel,UBNT,ubnt-uap-pro,ubiquiti-unifi-ap-pro))
+ $(eval $(call GluonModel,UBNT,ubnt-unifi,ubiquiti-unifi))
+-- 
+2.1.4
+
