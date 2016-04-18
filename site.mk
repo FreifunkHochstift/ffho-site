@@ -1,6 +1,7 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	gluon-alfred \
+	gluon-respondd \
 	ffho-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	ffho-autoupdater-wifi-fallback-legacy \
@@ -25,7 +26,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-next-node \
 	ffho-node-tuning \
 	gluon-radvd \
-	gluon-respondd \
 	ffho-respondd-config \
 	gluon-setup-mode \
 	ffho-site-auto-select \
