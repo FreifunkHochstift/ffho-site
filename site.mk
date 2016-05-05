@@ -17,7 +17,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	ffho-ebtables-net-rules \
-	ffho-geo-location-whitespace-fix \
 	gluon-luci-admin \
 	ffho-luci-autoupdater-wifi-fallback \
 	gluon-luci-portconfig \
