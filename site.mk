@@ -30,7 +30,6 @@ GLUON_SITE_PACKAGES := \
 	ffho-site-auto-select \
 	ffho-status-page \
 	ffho-txpower-fix \
-	ffho-wifi-blackout-workaround \
 	iwinfo \
 	iptables \
 	haveged
