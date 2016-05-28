@@ -89,10 +89,10 @@ index 0000000..79180b4
 + 	*"Rocket M XW")
 + 		name="rocket-m-xw"
 diff --git a/targets/ar71xx-generic/profiles.mk b/targets/ar71xx-generic/profiles.mk
-index c0b82ec..4826dba 100644
+index 14fee2a..316064d 100644
 --- a/targets/ar71xx-generic/profiles.mk
 +++ b/targets/ar71xx-generic/profiles.mk
-@@ -161,12 +161,19 @@ $(eval $(call GluonModel,UBNT,ubnt-air-gateway,ubiquiti-airgateway))
+@@ -162,12 +162,19 @@ $(eval $(call GluonModel,UBNT,ubnt-air-gateway,ubiquiti-airgateway))
  $(eval $(call GluonModel,UBNT,ubnt-airrouter,ubiquiti-airrouter))
  
  $(eval $(call GluonModel,UBNT,ubnt-bullet-m,ubiquiti-bullet-m))
@@ -114,8 +114,8 @@ index c0b82ec..4826dba 100644
 +
 +$(eval $(call GluonModel,UBNT,ubnt-loco-m-xw,ubiquiti-loco-m-xw))
  $(eval $(call GluonModel,UBNT,ubnt-nano-m-xw,ubiquiti-nanostation-m-xw))
+ $(eval $(call GluonModel,UBNT,ubnt-rocket-m-xw,ubiquiti-rocket-m-xw))
  $(eval $(call GluonModel,UBNT,ubnt-uap-pro,ubiquiti-unifi-ap-pro))
- $(eval $(call GluonModel,UBNT,ubnt-unifi,ubiquiti-unifi))
 -- 
 2.1.4
 

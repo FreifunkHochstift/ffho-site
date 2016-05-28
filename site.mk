@@ -1,34 +1,35 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
-	ffho-banner \
-	ffho-debug \
-	ffho-node-tuning \
-	ffho-ebtables-net-rules \
-	ffho-txpower-fix \
-	ffho-site-auto-select \
 	gluon-alfred \
 	gluon-respondd \
-	ffho-respondd-config \
 	ffho-autoupdater \
 	ffho-autoupdater-wifi-fallback \
+	ffho-autoupdater-wifi-fallback-legacy \
+	ffho-banner \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
-	gluon-config-mode-hostname \
 	gluon-config-mode-contact-info \
-	ffho-config-mode-mesh-vpn \
 	ffho-config-mode-geo-location \
+	gluon-config-mode-hostname \
+	ffho-config-mode-mesh-vpn \
 	ffho-config-mode-site-select \
+	ffho-debug \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
+	ffho-ebtables-net-rules \
 	gluon-luci-admin \
-	gluon-luci-autoupdater \
+	ffho-luci-autoupdater-wifi-fallback \
 	gluon-luci-portconfig \
 	gluon-luci-wifi-config \
-	gluon-next-node \
 	gluon-mesh-vpn-fastd \
+	gluon-next-node \
+	ffho-node-tuning \
 	gluon-radvd \
+	ffho-respondd-config \
 	gluon-setup-mode \
+	ffho-site-auto-select \
 	ffho-status-page \
+	ffho-txpower-fix \
 	iwinfo \
 	iptables \
 	haveged
@@ -60,7 +61,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 0.7.2~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.7.3~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
