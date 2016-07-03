@@ -1,6 +1,7 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	gluon-alfred \
+	ffho-aptimer \
 	gluon-respondd \
 	ffho-autoupdater \
 	ffho-autoupdater-wifi-fallback \
@@ -20,6 +21,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-admin \
 	ffho-luci-autoupdater-wifi-fallback \
 	gluon-luci-portconfig \
+	ffho-luci-remote-syslog \
 	gluon-luci-wifi-config \
 	gluon-mesh-vpn-fastd \
 	gluon-next-node \
