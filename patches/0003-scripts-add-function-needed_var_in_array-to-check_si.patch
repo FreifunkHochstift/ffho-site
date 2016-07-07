@@ -1,0 +1,45 @@
+From: Karsten Böddeker <freifunk@kb-light.de>
+Date: Thu, 30 Jun 2016 21:40:28 +0200
+Subject: [PATCH] scripts: add function needed_var_in_array to
+ check_site_lib.lua
+
+The function need_var_in_array(varname, array, required) checks weather a value of a variable (specified by its name) is included in an array.
+If the variable is a table or array, the function checks the value of each element against the given array.
+---
+ scripts/check_site_lib.lua | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/scripts/check_site_lib.lua b/scripts/check_site_lib.lua
+index 766b94a..9d581e9 100644
+--- a/scripts/check_site_lib.lua
++++ b/scripts/check_site_lib.lua
+@@ -103,3 +103,26 @@ function need_string_array(varname, required)
+    return assert(pcall(need_array, varname, function(e) assert_type(e, 'string') end, required),
+ 		 "site.conf error: expected `" .. varname .. "' to be a string array")
+ end
++
++function need_var_in_array(varname, array, required)
++   local var = loadvar(varname)
++
++   if required == false and var == nil then
++      return nil
++   end
++
++   function var_in_array(var, array)
++      for _, v in ipairs(array) do
++         if v == var then
++            return true
++         end
++      end
++      return false
++   end
++
++   for _,v in pairs(var) do
++      assert(var_in_array(v, array), "site.conf error: `" .. v .. "' is not a valid value for " .. varname)
++   end
++
++   return var
++end
+-- 
+2.1.4
+
