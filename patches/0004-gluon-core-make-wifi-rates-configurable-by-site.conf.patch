@@ -1,17 +1,17 @@
 From: Karsten Böddeker <freifunk@kb-light.de>
-Date: Thu, 30 Jun 2016 23:39:08 +0200
-Subject: [PATCH 2/2] gluon-core: make wifi rates configurable by site.conf
+Date: Fri, 1 Jul 2016 14:53:39 +0200
+Subject: [PATCH] gluon-core: make wifi rates configurable by site.conf
 
 and add documentation
 ---
- docs/site-example/site.conf                             | 8 ++++++++
- docs/user/site.rst                                      | 8 ++++++++
- package/gluon-core/check_site.lua                       | 8 ++++++++
- package/gluon-core/files/lib/gluon/upgrade/200-wireless | 8 ++++++++
- 4 files changed, 32 insertions(+)
+ docs/site-example/site.conf                             |  8 ++++++++
+ docs/user/site.rst                                      |  8 ++++++++
+ package/gluon-core/check_site.lua                       |  8 ++++++++
+ package/gluon-core/files/lib/gluon/upgrade/200-wireless | 12 ++++++++++++
+ 4 files changed, 36 insertions(+)
 
 diff --git a/docs/site-example/site.conf b/docs/site-example/site.conf
-index b58f525..19fe740 100644
+index b58f525..1f67aab 100644
 --- a/docs/site-example/site.conf
 +++ b/docs/site-example/site.conf
 @@ -35,6 +35,14 @@
@@ -20,17 +20,17 @@ index b58f525..19fe740 100644
  
 +    -- List of supported wifi rates (optional, implies basic_rate)
 +    -- Example removes 802.11b compatibility for better performance
-+    -- supported_rates = {6000, 9000, 12000, 18000, 24000, 36000, 48000, 54000},
++    supported_rates = {6000, 9000, 12000, 18000, 24000, 36000, 48000, 54000},
 +
 +    -- List of basic wifi rates (optional)
 +    -- Example removes 802.11b compatibility for better performance
-+    -- basic_rate = {6000, 9000, 18000, 36000, 54000},
++    basic_rate = {6000, 9000, 18000, 36000, 54000},
 +
      -- ESSID used for client network.
      ap = {
        ssid = 'entenhausen.freifunk.net',
 diff --git a/docs/user/site.rst b/docs/user/site.rst
-index b26a28a..e449bcb 100644
+index b26a28a..1ba9b4a 100644
 --- a/docs/user/site.rst
 +++ b/docs/user/site.rst
 @@ -95,6 +95,12 @@ wifi24 : optional
@@ -38,7 +38,7 @@ index b26a28a..e449bcb 100644
      Upgrades will not changed the disabled state.
  
 +    Additionally it is possible to configure the ``supported_rates`` and ``basic_rate``
-+    of each radio. Booth are optional and defaults to hostapd/driver default. But
++    of each radio. Both are optional, by default hostapd/driver dictate the rates.
 +    ``supported_rates`` implies ``basic_rate``, because ``basic_rate`` has to be a subset
 +    of ``supported_rates``.
 +    The example below disables 802.11b rates.
@@ -74,20 +74,24 @@ index 1647d77..555360a 100644
    end
  end
 diff --git a/package/gluon-core/files/lib/gluon/upgrade/200-wireless b/package/gluon-core/files/lib/gluon/upgrade/200-wireless
-index 5a98a70..a469683 100755
+index 5a98a70..d217428 100755
 --- a/package/gluon-core/files/lib/gluon/upgrade/200-wireless
 +++ b/package/gluon-core/files/lib/gluon/upgrade/200-wireless
-@@ -17,6 +17,14 @@ local function configure_radio(radio, index, config)
+@@ -17,6 +17,18 @@ local function configure_radio(radio, index, config)
      uci:set('wireless', radio, 'channel', config.channel)
      uci:set('wireless', radio, 'htmode', 'HT20')
      uci:set('wireless', radio, 'country', site.regdom)
 +
 +    if config.supported_rates then
 +      uci:set_list('wireless', radio, 'supported_rates', config.supported_rates)
++    else
++      uci:delete('wireless', radio, 'supported_rates')
 +    end
 +
 +    if config.basic_rate then
 +      uci:set_list('wireless', radio, 'basic_rate', config.basic_rate)
++    else
++      uci:delete('wireless', radio, 'basic_rate')
 +    end
    end
  end
