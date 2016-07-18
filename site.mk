@@ -3,6 +3,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-alfred \
 	ffho-aptimer \
 	gluon-respondd \
+	ffho-ath9k-blackout-workaround \
 	ffho-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	ffho-autoupdater-wifi-fallback-legacy \
