@@ -21,7 +21,7 @@ index 0000000..79180b4
 +Signed-off-by: Neal Oakey <neal.oakey@bingo-ev.de>
 +
 +diff --git a/target/linux/ar71xx/base-files/lib/ar71xx.sh b/target/linux/ar71xx/base-files/lib/ar71xx.sh
-+index 5768286..7f50d8a 100755
++index dab4d2c..e7b3cd2 100755
 +--- a/target/linux/ar71xx/base-files/lib/ar71xx.sh
 ++++ b/target/linux/ar71xx/base-files/lib/ar71xx.sh
 +@@ -64,6 +64,40 @@ wndr3700_board_detect() {
@@ -89,7 +89,7 @@ index 0000000..79180b4
 + 	*"Rocket M XW")
 + 		name="rocket-m-xw"
 diff --git a/targets/ar71xx-generic/profiles.mk b/targets/ar71xx-generic/profiles.mk
-index 14fee2a..316064d 100644
+index 4a63667..da178ea 100644
 --- a/targets/ar71xx-generic/profiles.mk
 +++ b/targets/ar71xx-generic/profiles.mk
 @@ -162,12 +162,19 @@ $(eval $(call GluonModel,UBNT,ubnt-air-gateway,ubiquiti-airgateway))
