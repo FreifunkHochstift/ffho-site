@@ -1,28 +1,22 @@
 From: Karsten Böddeker <freifunk@kb-light.de>
-Date: Fri, 1 Jul 2016 14:53:39 +0200
-Subject: [PATCH] gluon-core: make wifi rates configurable by site.conf
+Date: Wed, 3 Aug 2016 11:02:20 +0200
+Subject: gluon-core: make wifi rates configurable by site.conf
 
 and add documentation
----
- docs/site-example/site.conf                             |  8 ++++++++
- docs/user/site.rst                                      |  8 ++++++++
- package/gluon-core/check_site.lua                       |  8 ++++++++
- package/gluon-core/files/lib/gluon/upgrade/200-wireless | 12 ++++++++++++
- 4 files changed, 36 insertions(+)
 
 diff --git a/docs/site-example/site.conf b/docs/site-example/site.conf
-index b58f525..1f67aab 100644
+index b58f525..25624c3 100644
 --- a/docs/site-example/site.conf
 +++ b/docs/site-example/site.conf
 @@ -35,6 +35,14 @@
      -- Wireless channel.
      channel = 1,
  
-+    -- List of supported wifi rates (optional, implies basic_rate)
++    -- List of supported wifi rates (optional)
 +    -- Example removes 802.11b compatibility for better performance
 +    supported_rates = {6000, 9000, 12000, 18000, 24000, 36000, 48000, 54000},
 +
-+    -- List of basic wifi rates (optional)
++    -- List of basic wifi rates (optional, required if supported_rates is set)
 +    -- Example removes 802.11b compatibility for better performance
 +    basic_rate = {6000, 9000, 18000, 36000, 54000},
 +
@@ -30,7 +24,7 @@ index b58f525..1f67aab 100644
      ap = {
        ssid = 'entenhausen.freifunk.net',
 diff --git a/docs/user/site.rst b/docs/user/site.rst
-index b26a28a..1ba9b4a 100644
+index b26a28a..4af64b5 100644
 --- a/docs/user/site.rst
 +++ b/docs/user/site.rst
 @@ -95,6 +95,12 @@ wifi24 : optional
@@ -39,8 +33,8 @@ index b26a28a..1ba9b4a 100644
  
 +    Additionally it is possible to configure the ``supported_rates`` and ``basic_rate``
 +    of each radio. Both are optional, by default hostapd/driver dictate the rates.
-+    ``supported_rates`` implies ``basic_rate``, because ``basic_rate`` has to be a subset
-+    of ``supported_rates``.
++    If ``supported_rates`` is set, ``basic_rate`` is required, because ``basic_rate``
++    has to be a subset of ``supported_rates``.
 +    The example below disables 802.11b rates.
 +
      ``ap`` requires a single parameter, a string, named ``ssid`` which sets the
@@ -56,7 +50,7 @@ index b26a28a..1ba9b4a 100644
             ssid = 'entenhausen.freifunk.net',
           },
 diff --git a/package/gluon-core/check_site.lua b/package/gluon-core/check_site.lua
-index 1647d77..555360a 100644
+index 1647d77..2239271 100644
 --- a/package/gluon-core/check_site.lua
 +++ b/package/gluon-core/check_site.lua
 @@ -28,5 +28,13 @@ for _, config in ipairs({'wifi24', 'wifi5'}) do
@@ -64,12 +58,12 @@ index 1647d77..555360a 100644
  
      need_number(config .. '.channel')
 +
-+    local rates={1000, 2000, 5500, 6000, 9000, 11000, 12000, 18000, 24000, 36000, 48000, 54000}
-+    local supported_rates =  need_var_in_array(config .. '.supported_rates', rates, false)
++    local rates = {1000, 2000, 5500, 6000, 9000, 11000, 12000, 18000, 24000, 36000, 48000, 54000}
++    local supported_rates = need_array_of(config .. '.supported_rates', rates, false)
 +    if supported_rates then
-+      need_var_in_array(config .. '.basic_rate', supported_rates, true)
++      need_array_of(config .. '.basic_rate', supported_rates, true)
 +    else
-+      need_var_in_array(config .. '.basic_rate', rates, false)
++      need_array_of(config .. '.basic_rate', rates, false)
 +    end
    end
  end
@@ -96,6 +90,3 @@ index 5a98a70..d217428 100755
    end
  end
  
--- 
-2.1.4
-

@@ -1,16 +1,10 @@
 From: Karsten Böddeker <freifunk@kb-light.de>
 Date: Mon, 4 Apr 2016 17:02:55 +0200
-Subject: [PATCH] fix UBNT model detection
-
----
- .../openwrt/1000-fix-UBNT-XM-model-detection.patch | 74 ++++++++++++++++++++++
- targets/ar71xx-generic/profiles.mk                 | 15 +++--
- 2 files changed, 85 insertions(+), 4 deletions(-)
- create mode 100644 patches/openwrt/1000-fix-UBNT-XM-model-detection.patch
+Subject: fix UBNT model detection
 
 diff --git a/patches/openwrt/1000-fix-UBNT-XM-model-detection.patch b/patches/openwrt/1000-fix-UBNT-XM-model-detection.patch
 new file mode 100644
-index 0000000..79180b4
+index 0000000..0824058
 --- /dev/null
 +++ b/patches/openwrt/1000-fix-UBNT-XM-model-detection.patch
 @@ -0,0 +1,74 @@
@@ -116,6 +110,3 @@ index 4a63667..da178ea 100644
  $(eval $(call GluonModel,UBNT,ubnt-nano-m-xw,ubiquiti-nanostation-m-xw))
  $(eval $(call GluonModel,UBNT,ubnt-rocket-m-xw,ubiquiti-rocket-m-xw))
  $(eval $(call GluonModel,UBNT,ubnt-uap-pro,ubiquiti-unifi-ap-pro))
--- 
-2.1.4
-
