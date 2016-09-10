@@ -11,9 +11,9 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-contact-info \
-	ffho-config-mode-geo-location \
+	gluon-config-mode-geo-location \
 	gluon-config-mode-hostname \
-	ffho-config-mode-mesh-vpn \
+	gluon-config-mode-mesh-vpn \
 	ffho-config-mode-site-select \
 	ffho-debug \
 	gluon-ebtables-filter-multicast \
@@ -32,7 +32,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-setup-mode \
 	ffho-site-auto-select \
 	ffho-status-page \
-	ffho-txpower-fix \
 	iwinfo \
 	iptables \
 	haveged
@@ -71,3 +70,5 @@ GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 GLUON_PRIORITY ?= $(DEFAULT_GLUON_PRIORITY)
 GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
+GLUON_ATH10K_MESH ?= ibss
+GLUON_REGION ?= eu
