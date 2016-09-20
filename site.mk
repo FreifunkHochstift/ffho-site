@@ -1,7 +1,7 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	gluon-alfred \
-	ffho-aptimer \
+	ffho-ap-timer \
 	gluon-respondd \
 	ffho-ath9k-blackout-workaround \
 	ffho-autoupdater \
@@ -69,4 +69,5 @@ DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 GLUON_PRIORITY ?= $(DEFAULT_GLUON_PRIORITY)
+GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
