@@ -4,7 +4,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-ap-timer \
 	gluon-respondd \
 	ffho-ath9k-blackout-workaround \
-	ffho-autoupdater \
+	gluon-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	ffho-autoupdater-wifi-fallback-legacy \
 	ffho-banner \
