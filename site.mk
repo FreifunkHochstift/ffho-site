@@ -1,6 +1,7 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-14 \
 	gluon-alfred \
+	ffho-ap-timer \
 	gluon-respondd \
 	ffho-ath9k-blackout-workaround \
 	ffho-autoupdater \
@@ -10,9 +11,9 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
 	gluon-config-mode-contact-info \
-	ffho-config-mode-geo-location \
+	gluon-config-mode-geo-location \
 	gluon-config-mode-hostname \
-	ffho-config-mode-mesh-vpn \
+	gluon-config-mode-mesh-vpn \
 	ffho-config-mode-site-select \
 	ffho-debug \
 	gluon-ebtables-filter-multicast \
@@ -30,7 +31,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-setup-mode \
 	ffho-site-auto-select \
 	ffho-status-page \
-	ffho-txpower-fix \
 	iwinfo \
 	iptables \
 	haveged
@@ -62,9 +62,11 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 0.7.3~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 0.7.4~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
 GLUON_PRIORITY ?= $(DEFAULT_GLUON_PRIORITY)
+GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
+GLUON_ATH10K_MESH ?= 11s
