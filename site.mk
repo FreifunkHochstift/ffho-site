@@ -19,6 +19,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	ffho-ebtables-net-rules \
+	ffho-fix-defaultroute \
 	gluon-luci-admin \
 	ffho-luci-autoupdater-wifi-fallback \
 	gluon-luci-portconfig \
@@ -26,7 +27,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-luci-wifi-config \
 	gluon-mesh-vpn-fastd \
 	gluon-next-node \
-	ffho-node-tuning \
 	gluon-radvd \
 	ffho-respondd-config \
 	gluon-setup-mode \
