@@ -21,6 +21,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-ebtables-net-rules \
 	ffho-fix-defaultroute \
 	gluon-luci-admin \
+	ffho-luci-ap-timer \
 	ffho-luci-autoupdater-wifi-fallback \
 	gluon-luci-portconfig \
 	ffho-luci-remote-syslog \
