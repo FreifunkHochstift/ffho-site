@@ -4,7 +4,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-ap-timer \
 	gluon-respondd \
 	ffho-ath9k-blackout-workaround \
-	ffho-autoupdater \
+	gluon-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	ffho-autoupdater-wifi-fallback-legacy \
 	ffho-banner \
@@ -19,13 +19,14 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
 	ffho-ebtables-net-rules \
+	ffho-fix-defaultroute \
 	gluon-luci-admin \
+	ffho-luci-ap-timer \
 	ffho-luci-autoupdater-wifi-fallback \
 	gluon-luci-portconfig \
 	gluon-luci-wifi-config \
 	gluon-mesh-vpn-fastd \
 	gluon-next-node \
-	ffho-node-tuning \
 	gluon-radvd \
 	ffho-respondd-config \
 	gluon-setup-mode \
