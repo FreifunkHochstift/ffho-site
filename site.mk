@@ -1,6 +1,5 @@
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-14 \
-	gluon-alfred \
+	gluon-mesh-batman-adv-15 \
 	ffho-ap-timer \
 	gluon-respondd \
 	ffho-ath9k-blackout-workaround \
@@ -28,7 +27,6 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-next-node \
 	gluon-radvd \
-	ffho-respondd-config \
 	gluon-setup-mode \
 	ffho-site-auto-select \
 	ffho-status-page \
@@ -63,7 +61,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 0.7.4~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.0.0~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
