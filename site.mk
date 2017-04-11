@@ -34,6 +34,9 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	haveged
 
+APU2_NIC := \
+	kmod-igb
+
 USB_BASIC := \
 	kmod-usb-core \
 	kmod-usb2 \
@@ -46,22 +49,29 @@ USB_NIC := \
 	kmod-usb-net-rtl8152 \
 	kmod-usb-net-dm9601-ether
 
+WLAN := \
+	kmod-ath9k \
+	kmod-ath10k-ct \
+	ath10k-firmware-qca988x-11s
+
 ifeq ($(GLUON_TARGET),x86-generic)
 	GLUON_SITE_PACKAGES += \
 		$(USB_BASIC) \
 		kmod-usb-ohci-pci \
-		$(USB_NIC)
+		$(USB_NIC) \
+		$(WLAN)
 endif
 
 ifeq ($(GLUON_TARGET),x86-64)
 	GLUON_SITE_PACKAGES += \
+		$(APU2_NIC) \
 		$(USB_BASIC) \
 		$(USB_NIC) \
-		kmod-igb #APU2
+		$(WLAN)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.0.2~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.0.4~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
