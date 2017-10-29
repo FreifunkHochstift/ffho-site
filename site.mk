@@ -23,6 +23,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-web-admin \
 	ffho-web-ap-timer \
 	ffho-web-autoupdater \
+	gluon-web-logging \
 	gluon-web-network \
 	gluon-web-wifi-config \
 	iwinfo \
