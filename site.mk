@@ -1,11 +1,9 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
-	ffho-ap-timer \
 	gluon-respondd \
-	ffho-ath9k-blackout-workaround \
+	ffho-ap-timer \
 	gluon-autoupdater \
 	ffho-autoupdater-wifi-fallback \
-	ffho-autoupdater-wifi-fallback-legacy \
 	ffho-banner \
 	gluon-config-mode-core \
 	gluon-config-mode-autoupdater \
@@ -17,25 +15,19 @@ GLUON_SITE_PACKAGES := \
 	ffho-debug \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
-	ffho-ebtables-net-rules \
-	ffho-fix-defaultroute \
-	gluon-luci-admin \
-	ffho-luci-ap-timer \
-	ffho-luci-autoupdater-wifi-fallback \
-	gluon-luci-portconfig \
-	gluon-luci-wifi-config \
+	gluon-ebtables-source-filter \
 	gluon-mesh-vpn-fastd \
-	gluon-next-node \
 	gluon-radvd \
 	gluon-setup-mode \
-	ffho-site-auto-select \
-	ffho-status-page \
+	gluon-status-page \
+	gluon-web-admin \
+	ffho-web-ap-timer \
+	ffho-web-autoupdater \
+	gluon-web-logging \
+	gluon-web-network \
+	gluon-web-wifi-config \
 	iwinfo \
-	iptables \
 	haveged
-
-APU2_NIC := \
-	kmod-igb
 
 USB_BASIC := \
 	kmod-usb-core \
@@ -52,7 +44,7 @@ USB_NIC := \
 WLAN := \
 	kmod-ath9k \
 	kmod-ath10k-ct \
-	ath10k-firmware-qca988x-11s
+	ath10k-firmware-qca988x-ct
 
 ifeq ($(GLUON_TARGET),x86-generic)
 	GLUON_SITE_PACKAGES += \
@@ -64,14 +56,13 @@ endif
 
 ifeq ($(GLUON_TARGET),x86-64)
 	GLUON_SITE_PACKAGES += \
-		$(APU2_NIC) \
 		$(USB_BASIC) \
 		$(USB_NIC) \
 		$(WLAN)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.0.5~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.1.0~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
