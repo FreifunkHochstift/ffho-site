@@ -3,6 +3,7 @@ GLUON_FEATURES := \
         ebtables-filter-multicast \
         ebtables-filter-ra-dhcp \
         ebtables-limit-arp \
+	config-mode-geo-location-osm \
         mesh-batman-adv-15 \
         mesh-vpn-fastd \
         radvd \
