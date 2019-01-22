@@ -1,31 +1,26 @@
+GLUON_FEATURES := \
+        autoupdater \
+        ebtables-filter-multicast \
+        ebtables-filter-ra-dhcp \
+        ebtables-limit-arp \
+	config-mode-geo-location-osm \
+        mesh-batman-adv-15 \
+        mesh-vpn-fastd \
+        radvd \
+        respondd \
+        status-page \
+        web-advanced \
+        web-wizard
+
 GLUON_SITE_PACKAGES := \
-	gluon-mesh-batman-adv-15 \
-	gluon-respondd \
+	-gluon-web-autoupdater \
 	ffho-ap-timer \
-	gluon-autoupdater \
 	ffho-autoupdater-wifi-fallback \
 	ffho-banner \
-	gluon-config-mode-core \
-	gluon-config-mode-autoupdater \
-	gluon-config-mode-contact-info \
-	gluon-config-mode-geo-location \
-	gluon-config-mode-hostname \
-	gluon-config-mode-mesh-vpn \
 	ffho-config-mode-site-select \
 	ffho-debug \
-	gluon-ebtables-filter-multicast \
-	gluon-ebtables-filter-ra-dhcp \
-	gluon-ebtables-source-filter \
-	gluon-mesh-vpn-fastd \
-	gluon-radvd \
-	gluon-setup-mode \
-	gluon-status-page \
-	gluon-web-admin \
 	ffho-web-ap-timer \
 	ffho-web-autoupdater \
-	gluon-web-logging \
-	gluon-web-network \
-	gluon-web-wifi-config \
 	iwinfo \
 	haveged
 
@@ -44,7 +39,6 @@ USB_NIC := \
 WLAN := \
 	kmod-ath9k \
 	kmod-ath10k-ct \
-	ath10k-firmware-qca988x-ct
 
 ifeq ($(GLUON_TARGET),x86-generic)
 	GLUON_SITE_PACKAGES += \
@@ -62,7 +56,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.1.0~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.2.0~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
