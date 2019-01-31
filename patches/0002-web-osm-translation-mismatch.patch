@@ -1,0 +1,17 @@
+From: Michael Schwarz <post@michael-schwarz.name>
+Date: Fre, 18 Jan 2018 09:18:30 +0200
+Subject: gluon: patch gluon-config-mode-geo-location translation
+
+diff --git a/package/gluon-config-mode-geo-location/luasrc/lib/gluon/config-mode/wizard/0400-geo-location.lua b/package/gluon-config-mode-geo-location/luasrc/lib/gluon/config-mode/wizard/0400-geo-location.lua
+index 6a211b64..928b4c5a 100644
+--- a/package/gluon-config-mode-geo-location/luasrc/lib/gluon/config-mode/wizard/0400-geo-location.lua
++++ b/package/gluon-config-mode-geo-location/luasrc/lib/gluon/config-mode/wizard/0400-geo-location.lua
+@@ -15,7 +15,7 @@ return function(form, uci)
+ 	if not text then
+ 		text = pkg_i18n.translate(
+ 			'If you want the location of your node to ' ..
+-			'be displayed on the map, you can enter its coordinates here.'
++			'be displayed on public maps, you can enter its coordinates here.'
+ 		)
+ 		if osm then
+ 			text = text .. ' ' .. osm.help(i18n)
