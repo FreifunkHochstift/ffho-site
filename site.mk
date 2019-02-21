@@ -18,7 +18,6 @@ GLUON_SITE_PACKAGES := \
 	ffho-autoupdater-wifi-fallback \
 	ffho-banner \
 	ffho-config-mode-site-select \
-	ffho-debug \
 	ffho-web-ap-timer \
 	ffho-web-autoupdater \
 	iwinfo \
@@ -56,7 +55,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.2.0~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.2.1~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
