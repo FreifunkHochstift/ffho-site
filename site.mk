@@ -6,7 +6,6 @@ GLUON_FEATURES := \
 	config-mode-geo-location-osm \
         mesh-batman-adv-15 \
         mesh-vpn-fastd \
-        radvd \
         respondd \
         status-page \
         web-advanced \
@@ -55,7 +54,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.2.2~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.3.0~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -63,3 +62,4 @@ GLUON_PRIORITY ?= $(DEFAULT_GLUON_PRIORITY)
 GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
 GLUON_ATH10K_MESH ?= 11s
+GLUON_DEPRECATED ?= full
