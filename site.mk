@@ -4,6 +4,7 @@ GLUON_FEATURES := \
         ebtables-filter-ra-dhcp \
         ebtables-limit-arp \
 	config-mode-geo-location-osm \
+	config-mode-domain-select \
         mesh-batman-adv-15 \
         mesh-vpn-fastd \
         respondd \
@@ -16,7 +17,6 @@ GLUON_SITE_PACKAGES := \
 	ffho-ap-timer \
 	ffho-autoupdater-wifi-fallback \
 	ffho-banner \
-	ffho-config-mode-site-select \
 	ffho-web-ap-timer \
 	ffho-web-autoupdater \
 	iwinfo \
@@ -34,9 +34,7 @@ USB_NIC := \
 	kmod-usb-net-rtl8152 \
 	kmod-usb-net-dm9601-ether
 
-WLAN := \
-	kmod-ath9k \
-	kmod-ath10k-ct \
+WLAN := kmod-ath9k
 
 ifeq ($(GLUON_TARGET),x86-generic)
 	GLUON_SITE_PACKAGES += \
@@ -54,7 +52,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.3.0~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.4.0~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
@@ -63,3 +61,4 @@ GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
 GLUON_ATH10K_MESH ?= 11s
 GLUON_DEPRECATED ?= full
+GLUON_MULTIDOMAIN=1
