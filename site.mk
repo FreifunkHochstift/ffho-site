@@ -19,6 +19,7 @@ GLUON_SITE_PACKAGES := \
 	ffho-banner \
 	ffho-web-ap-timer \
 	ffho-web-autoupdater \
+	ffho-domain-migration \
 	iwinfo \
 	haveged
 
