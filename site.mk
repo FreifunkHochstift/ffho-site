@@ -53,7 +53,7 @@ ifeq ($(GLUON_TARGET),x86-64)
 endif
 
 # 0.2~1 < 0.2 < 0.2+1 < 0.2-1 < 0.2.1 < 0.3
-DEFAULT_GLUON_RELEASE := 1.4.0~exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 1.4.1~exp$(shell date '+%Y%m%d')
 DEFAULT_GLUON_PRIORITY := 0
 
 GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
