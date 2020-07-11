@@ -7,6 +7,7 @@ GLUON_FEATURES := \
 	config-mode-domain-select \
         mesh-batman-adv-15 \
         mesh-vpn-fastd \
+	gluon-web-mesh-vpn-fastd \
         respondd \
         status-page \
         web-advanced \
