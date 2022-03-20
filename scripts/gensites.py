@@ -1,14 +1,14 @@
-#!/usr/bin/python
+#!env python3
 # -*- coding: utf-8 -*-
 
 import os,sys
 
 if not 'GLUON_SITEDIR' in os.environ:
-    print "GLUON_SITEDIR not set"
+    print ("GLUON_SITEDIR not set")
     sys.exit(1)
 
-execfile(os.environ['GLUON_SITEDIR'] + "/extra/sites.conf")
-execfile(os.environ['GLUON_SITEDIR'] + "/extra/groups.conf")
+exec(open(os.environ['GLUON_SITEDIR'] + "/extra/sites.conf").read())
+exec(open(os.environ['GLUON_SITEDIR'] + "/extra/groups.conf").read())
 DOMAINS=os.environ['GLUON_SITEDIR'] + "/domains/"
 TEMPLATE = ""
 with open(os.environ['GLUON_SITEDIR'] + "/extra/template.conf") as f:
